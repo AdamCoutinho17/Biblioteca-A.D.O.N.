@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #e9f0ff, #ffffff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #003c8f;
+      color: white;
+      padding: 18px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff;
+      padding: 10px;
+      gap: 10px;
+      border-bottom: 3px solid #003c8f;
+    }
+
+    .nav-btn {
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 500;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+
+    .nav-btn:hover {
+      background-color: #0066ff;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 1000px;
+      background: white;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      overflow-x: auto;
+    }
+
+    h2 {
+      color: #003c8f;
+      border-left: 5px solid #003c8f;
+      padding-left: 10px;
+      font-size: 22px;
+    }
+
+    /* ===== TABELAS ===== */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: #004aad;
+      color: white;
+      text-align: left;
+      padding: 12px;
+      font-size: 15px;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9ff;
+    }
+
+    tr:hover {
+      background-color: #e3ecff;
+    }
+
+    a {
+      color: #004aad;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FORMULÁRIOS ===== */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #004aad;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: #004aad;
+      box-shadow: 0 0 5px rgba(0, 74, 173, 0.4);
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #0066ff;
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 10px;
+        padding: 20px;
+      }
+
+      .nav-btn {
+        flex: 1 1 45%;
+        text-align: center;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>📚 Sistema de Biblioteca A.D.O.N.</header>
+
+  <nav>
+    <a href="/" class="nav-btn">🏠 Início</a>
+    <a href="/cadastro" class="nav-btn">➕ Cadastrar Livro</a>
+    <a href="/emprestimo" class="nav-btn">📘 Alugar Livro</a>
+    <a href="/devolver" class="nav-btn">📗 Devolver Livro</a>
+  </nav>
+
+  <main>
+    {% block conteudo %}{% endblock %}
+  </main>
+</body>
+</html>
